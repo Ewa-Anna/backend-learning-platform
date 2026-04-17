@@ -16,6 +16,8 @@ from .views import (
     DeactivateAccountView,
     PasswordResetConfirmAPIView,
     UserListView,
+    UserStreakView,
+    UpdateStreakView,
 )
 
 app_name = "user"
@@ -48,4 +50,6 @@ urlpatterns = [
         name="deactivate-account",
     ),
     path("users/", UserListView.as_view(), name="user-list"),
+    path("streak/", UserStreakView.as_view()),
+    path("streak/update/", UpdateStreakView.as_view()),
 ]
